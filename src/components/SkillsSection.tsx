@@ -52,10 +52,10 @@ const STUDYING = [
 function SkillGroupCard({ group, index }: { group: typeof SKILL_GROUPS[0]; index: number }) {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 28 }}
+      initial={{ opacity: 0, y: 16 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: '-60px' }}
-      transition={{ duration: 0.55, delay: index * 0.1, ease: [0.22, 1, 0.36, 1] }}
+      transition={{ duration: 0.35, delay: index * 0.1, ease: [0.22, 1, 0.36, 1] }}
       whileHover={{ boxShadow: `0 0 28px ${group.color}` }}
       className="border border-primary/10 bg-[#070707] rounded-xl p-6 space-y-5 transition-all duration-300"
     >
@@ -77,14 +77,11 @@ function SkillGroupCard({ group, index }: { group: typeof SKILL_GROUPS[0]; index
 
       {/* Tags */}
       <div className="flex flex-wrap gap-2">
-        {group.skills.map((skill, i) => (
+        {group.skills.map((skill) => (
           <motion.span
             key={skill}
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ delay: index * 0.1 + i * 0.04, ease: [0.34, 1.56, 0.64, 1] }}
             whileHover={{ scale: 1.06 }}
+            transition={{ duration: 0.15 }}
             className="text-xs font-mono px-2.5 py-1 rounded-md border border-primary/15 bg-primary/5 text-primary/80 transition-colors hover:border-primary/35 hover:text-primary cursor-default"
           >
             {skill}
@@ -104,10 +101,10 @@ export function SkillsSection() {
 
         {/* Heading */}
         <motion.div
-          initial={{ opacity: 0, x: -20 }}
+          initial={{ opacity: 0, x: -16 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 0.35 }}
           className="space-y-2"
         >
           <div className="section-label">Neural Map</div>
@@ -172,11 +169,9 @@ export function SkillsSection() {
                 {STUDYING.map((item, i) => (
                   <motion.span
                     key={i}
-                    initial={{ opacity: 0, scale: 0.9 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ delay: i * 0.04, ease: [0.34, 1.56, 0.64, 1] }}
-                    whileHover={{ scale: 1.05, borderColor: 'rgba(34,197,94,0.4)' }}
-                    className="text-xs font-mono px-3 py-1.5 rounded-md border border-primary/15 bg-primary/4 text-muted-foreground hover:text-foreground transition-colors cursor-default"
+                    whileHover={{ scale: 1.05 }}
+                    transition={{ duration: 0.15 }}
+                    className="text-xs font-mono px-3 py-1.5 rounded-md border border-primary/15 bg-primary/4 text-muted-foreground hover:text-foreground hover:border-primary/40 transition-colors cursor-default"
                   >
                     {item}
                   </motion.span>

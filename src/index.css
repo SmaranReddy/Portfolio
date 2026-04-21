@@ -173,6 +173,30 @@
   animation: grid-move 4s linear infinite;
 }
 
+/* ── Background orb animations (CSS — runs off JS thread) ───────────────── */
+@keyframes orb-a {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50%       { transform: translate(60px, -40px) scale(1.15); }
+}
+@keyframes orb-b {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50%       { transform: translate(-50px, 60px) scale(0.87); }
+}
+@keyframes orb-c {
+  0%, 100% { transform: translate(0, 0); }
+  33%       { transform: translate(30px, -30px); }
+  66%       { transform: translate(-30px, 30px); }
+}
+@keyframes scanline-sweep {
+  from { transform: translateY(-100%); }
+  to   { transform: translateY(200vh); }
+}
+
+.animate-orb-a        { animation: orb-a 16s ease-in-out infinite; will-change: transform; }
+.animate-orb-b        { animation: orb-b 20s ease-in-out infinite; will-change: transform; }
+.animate-orb-c        { animation: orb-c 25s ease-in-out infinite; will-change: transform; }
+.animate-scanline-sweep { animation: scanline-sweep 10s linear 3s infinite; will-change: transform; }
+
 /* ── Floating particle animations ────────────────────────────────────────── */
 @keyframes particle-a {
   0%, 100% { transform: translate(0px,   0px); }
@@ -228,4 +252,20 @@
   content: '> ';
   color: hsl(142 71% 45%);
   font-weight: 700;
+}
+
+/* ── Reduced motion — disable all decorative animations ─────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .animate-orb-a, .animate-orb-b, .animate-orb-c,
+  .animate-scanline-sweep, .animate-scanline,
+  .animate-pulse-glow, .animate-flicker, .animate-grid-move {
+    animation: none !important;
+  }
+}
+
+/* ── Mobile — slow orbs to save battery ─────────────────────────────────── */
+@media (max-width: 768px) {
+  .animate-orb-a { animation-duration: 22s; }
+  .animate-orb-b { animation-duration: 28s; }
+  .animate-orb-c { animation-duration: 34s; }
 }

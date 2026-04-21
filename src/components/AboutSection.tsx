@@ -14,10 +14,10 @@ export function AboutSection() {
       <div className="max-w-6xl mx-auto space-y-14">
         {/* Heading */}
         <motion.div
-          initial={{ opacity: 0, x: -20 }}
+          initial={{ opacity: 0, x: -16 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 0.35 }}
           className="space-y-2"
         >
           <div className="section-label">System Identity</div>
@@ -29,10 +29,10 @@ export function AboutSection() {
 
           {/* Left — bio */}
           <motion.div
-            initial={{ opacity: 0, x: -24 }}
+            initial={{ opacity: 0, x: -16 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+            transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
             className="space-y-7"
           >
             {/* Operator badge */}
@@ -113,10 +113,10 @@ export function AboutSection() {
 
           {/* Right — stat cards */}
           <motion.div
-            initial={{ opacity: 0, x: 24 }}
+            initial={{ opacity: 0, x: 16 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
+            transition={{ duration: 0.4, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
             className="space-y-3"
           >
             {STATS.map((s, i) => (
@@ -125,7 +125,7 @@ export function AboutSection() {
                 initial={{ opacity: 0, y: 16 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: i * 0.1, duration: 0.45 }}
+                transition={{ delay: i * 0.08, duration: 0.3 }}
                 whileHover={{ x: 6, borderColor: 'rgba(34,197,94,0.3)', backgroundColor: 'rgba(34,197,94,0.03)' }}
                 className="flex items-center gap-5 p-5 rounded-xl border border-primary/10 bg-[#080808] transition-all duration-200 cursor-default"
               >
@@ -150,7 +150,7 @@ export function AboutSection() {
               initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: 0.35 }}
+              transition={{ delay: 0.25, duration: 0.3 }}
               className="p-5 rounded-xl border border-primary/10 bg-[#080808] font-mono text-xs space-y-3"
             >
               <div className="flex items-center gap-2 text-accent font-bold uppercase tracking-wider">

@@ -18,32 +18,16 @@ function SceneBackground() {
       {/* Radial vignette */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_90%_60%_at_50%_40%,transparent_30%,rgba(0,0,0,0.85)_100%)]" />
 
-      {/* Floating orbs */}
-      <motion.div
-        animate={{ x: [0, 60, 0], y: [0, -40, 0], scale: [1, 1.18, 1] }}
-        transition={{ duration: 16, repeat: Infinity, ease: 'easeInOut' }}
-        className="absolute top-[15%] left-[10%] w-[600px] h-[400px] rounded-full bg-primary/5 blur-[120px]"
-      />
-      <motion.div
-        animate={{ x: [0, -50, 0], y: [0, 60, 0], scale: [1, 0.85, 1] }}
-        transition={{ duration: 20, repeat: Infinity, ease: 'easeInOut', delay: 5 }}
-        className="absolute bottom-[20%] right-[8%] w-[500px] h-[400px] rounded-full bg-accent/4 blur-[120px]"
-      />
-      <motion.div
-        animate={{ x: [0, 30, -30, 0], y: [0, -30, 30, 0] }}
-        transition={{ duration: 25, repeat: Infinity, ease: 'easeInOut', delay: 10 }}
-        className="absolute top-[60%] left-[45%] w-[350px] h-[350px] rounded-full bg-primary/3 blur-[100px]"
-      />
+      {/* Floating orbs — CSS keyframes (off JS thread, GPU-composited) */}
+      <div className="absolute top-[15%] left-[10%] w-[500px] h-[350px] rounded-full bg-primary/5 blur-[90px] animate-orb-a" />
+      <div className="absolute bottom-[20%] right-[8%] w-[450px] h-[350px] rounded-full bg-accent/4 blur-[90px] animate-orb-b" style={{ animationDelay: '5s' }} />
+      <div className="absolute top-[60%] left-[45%] w-[300px] h-[300px] rounded-full bg-primary/3 blur-[80px] animate-orb-c" style={{ animationDelay: '10s' }} />
 
       {/* CRT overlay */}
       <div className="absolute inset-0 crt-overlay opacity-[0.025]" />
 
-      {/* Scanline sweep */}
-      <motion.div
-        animate={{ y: ['-100%', '200vh'] }}
-        transition={{ duration: 10, repeat: Infinity, ease: 'linear', delay: 3 }}
-        className="absolute left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-primary/20 to-transparent"
-      />
+      {/* Scanline sweep — CSS keyframes */}
+      <div className="absolute left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-primary/20 to-transparent animate-scanline-sweep" />
     </div>
   );
 }
@@ -114,9 +98,9 @@ function App() {
 
       {/* ── Floating pill navbar ─────────────────────────────────────────── */}
       <motion.header
-        initial={{ y: -60, opacity: 0 }}
+        initial={{ y: -40, opacity: 0 }}
         animate={{ y: 0,   opacity: 1 }}
-        transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+        transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
         className="fixed top-5 left-1/2 -translate-x-1/2 z-50 w-auto"
       >
         {/* Desktop pill */}
@@ -128,8 +112,8 @@ function App() {
           {/* Logo */}
           <a href="#hero" className="flex items-center gap-2 text-primary font-bold text-sm mr-4 group">
             <motion.div
-              animate={{ rotate: [0, 10, -10, 0] }}
-              transition={{ duration: 3, repeat: Infinity, repeatDelay: 5 }}
+              animate={{ rotate: [0, 8, -8, 0] }}
+              transition={{ duration: 2.5, repeat: Infinity, repeatDelay: 7 }}
             >
               <Terminal size={16} className="text-primary" />
             </motion.div>
@@ -237,7 +221,7 @@ function App() {
       <motion.main
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ duration: 0.5 }}
+        transition={{ duration: 0.3 }}
         className="relative z-10"
       >
         <div id="hero">

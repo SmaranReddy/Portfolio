@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef, memo } from 'react';
 import { motion } from 'framer-motion';
 import { Github, Linkedin, Mail, Cpu } from 'lucide-react';
 
@@ -35,20 +35,29 @@ function useTypewriterOnce(text: string, active: boolean) {
   return { displayed, done };
 }
 
-function DiagnosticPanel() {
+const DiagnosticPanel = memo(function DiagnosticPanel() {
   const [progress, setProgress] = useState(0);
 
   useEffect(() => {
-    const t = setTimeout(() => {
-      const interval = setInterval(() => {
-        setProgress(p => {
-          if (p >= 85) { clearInterval(interval); return 85; }
-          return p + 1;
-        });
-      }, 20);
-      return () => clearInterval(interval);
+    const TARGET = 85;
+    const DURATION = 1700;
+    let rafId: number;
+    let startTime: number | null = null;
+
+    const timeoutId = setTimeout(() => {
+      const tick = (timestamp: number) => {
+        if (!startTime) startTime = timestamp;
+        const p = Math.min(Math.round(((timestamp - startTime) / DURATION) * TARGET), TARGET);
+        setProgress(p);
+        if (p < TARGET) rafId = requestAnimationFrame(tick);
+      };
+      rafId = requestAnimationFrame(tick);
     }, 800);
-    return () => clearTimeout(t);
+
+    return () => {
+      clearTimeout(timeoutId);
+      cancelAnimationFrame(rafId);
+    };
   }, []);
 
   return (
@@ -80,7 +89,7 @@ function DiagnosticPanel() {
       </div>
     </div>
   );
-}
+});
 
 export function TerminalHero() {
   const [started, setStarted] = useState(false);
@@ -101,9 +110,9 @@ export function TerminalHero() {
 
       {/* Terminal window */}
       <motion.div
-        initial={{ opacity: 0, y: 24 }}
+        initial={{ opacity: 0, y: 16 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+        transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
         className="relative z-10 w-full max-w-7xl border border-primary/20 rounded-xl overflow-hidden"
         style={{
           background: 'rgba(10, 10, 10, 0.95)',
@@ -168,7 +177,7 @@ export function TerminalHero() {
                   initial={{ opacity: 0, y: 6 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.6 + i * 0.08 }}
-                  whileHover={{ scale: 1.1, boxShadow: '0 0 14px rgba(34,197,94,0.3)' }}
+                  whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.92 }}
                   className="p-2.5 border border-primary/25 hover:border-primary/60 hover:bg-primary/10 rounded-lg transition-colors text-muted-foreground hover:text-primary"
                   aria-label={label}
@@ -183,7 +192,7 @@ export function TerminalHero() {
           <motion.div
             initial={{ opacity: 0, x: 16 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.35, duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
+            transition={{ delay: 0.2, duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
             className="md:w-96 shrink-0"
           >
             <DiagnosticPanel />

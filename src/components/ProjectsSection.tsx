@@ -93,15 +93,12 @@ function StackTag({ label }: { label: string }) {
 function FeaturedCard({ project }: { project: Project }) {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 32 }}
+      initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: '-40px' }}
-      transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-      whileHover={{
-        scale: 1.01,
-        boxShadow: `0 0 60px ${project.glowHover}, 0 20px 60px rgba(0,0,0,0.4)`,
-      }}
-      className={`relative border ${project.border} bg-[#070707] rounded-2xl overflow-hidden transition-all duration-300`}
+      transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+      whileHover={{ scale: 1.01 }}
+      className={`relative border ${project.border} bg-[#070707] rounded-2xl overflow-hidden transition-transform duration-200`}
       style={{ boxShadow: `0 0 30px ${project.glow}` }}
     >
       {/* Left accent line */}
@@ -187,15 +184,12 @@ function FeaturedCard({ project }: { project: Project }) {
 function ProjectCard({ project, index }: { project: Project; index: number }) {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 28 }}
+      initial={{ opacity: 0, y: 16 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: '-40px' }}
-      transition={{ duration: 0.55, delay: index * 0.1, ease: [0.22, 1, 0.36, 1] }}
-      whileHover={{
-        scale: 1.01,
-        boxShadow: `0 0 40px ${project.glowHover}, 0 16px 50px rgba(0,0,0,0.4)`,
-      }}
-      className={`relative flex border ${project.border} bg-[#070707] rounded-2xl overflow-hidden transition-all duration-300`}
+      transition={{ duration: 0.35, delay: index * 0.08, ease: [0.22, 1, 0.36, 1] }}
+      whileHover={{ scale: 1.01 }}
+      className={`relative flex border ${project.border} bg-[#070707] rounded-2xl overflow-hidden transition-transform duration-200`}
       style={{ boxShadow: `0 0 20px ${project.glow}` }}
     >
       {/* Left accent line */}
@@ -281,10 +275,10 @@ export function ProjectsSection() {
 
         {/* Heading */}
         <motion.div
-          initial={{ opacity: 0, x: -20 }}
+          initial={{ opacity: 0, x: -16 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 0.35 }}
           className="space-y-2"
         >
           <div className="section-label">Mission Log</div>

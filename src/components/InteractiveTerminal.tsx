@@ -200,10 +200,10 @@ export function InteractiveTerminal() {
 
         {/* Heading */}
         <motion.div
-          initial={{ opacity: 0, x: -20 }}
+          initial={{ opacity: 0, x: -16 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 0.35 }}
           className="space-y-2"
         >
           <div className="section-label">Terminal Access</div>
@@ -217,10 +217,10 @@ export function InteractiveTerminal() {
 
           {/* Left — contact links */}
           <motion.div
-            initial={{ opacity: 0, x: -24 }}
+            initial={{ opacity: 0, x: -16 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+            transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
             className="space-y-4"
           >
             <div className="text-xs font-mono text-primary/50 uppercase tracking-widest mb-5">
@@ -237,7 +237,7 @@ export function InteractiveTerminal() {
                 initial={{ opacity: 0, y: 16 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: i * 0.1, duration: 0.45 }}
+                transition={{ delay: i * 0.08, duration: 0.3 }}
               >
                 <ContactLink {...item} />
               </motion.div>
@@ -268,10 +268,10 @@ export function InteractiveTerminal() {
 
           {/* Right — terminal */}
           <motion.div
-            initial={{ opacity: 0, x: 24 }}
+            initial={{ opacity: 0, x: 16 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
+            transition={{ duration: 0.4, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
           >
             {/* Terminal window */}
             <div className="rounded-xl border border-primary/15 bg-[#060606] overflow-hidden shadow-[0_0_40px_rgba(34,197,94,0.06)]">
