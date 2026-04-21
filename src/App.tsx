@@ -69,6 +69,11 @@ function App() {
   const scaleX = useSpring(scrollYProgress, { stiffness: 100, damping: 30, restDelta: 0.001 });
 
   useEffect(() => {
+    history.scrollRestoration = 'manual';
+    window.scrollTo(0, 0);
+  }, []);
+
+  useEffect(() => {
     const onScroll = () => setIsScrolled(window.scrollY > 60);
     window.addEventListener('scroll', onScroll);
     return () => window.removeEventListener('scroll', onScroll);
