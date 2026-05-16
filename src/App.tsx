@@ -149,7 +149,7 @@ function App() {
           <motion.a
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            href="https://drive.google.com/file/d/1OPi3Z3s3j7o5rdLnXCMCRU_SNuIOwTeG/view?usp=drive_link"
+            href="https://drive.google.com/file/d/1x7-KRZ1piuCzdhyRa-n-Dfc5u08VdHLQ/view?usp=sharing"
             target="_blank"
             rel="noopener noreferrer"
             className="ml-2 flex items-center gap-1.5 px-3 py-1.5 text-xs font-mono rounded-full border border-primary/40 text-primary hover:bg-primary/10 hover:border-primary/70 transition-all"
@@ -205,7 +205,7 @@ function App() {
             ))}
             <div className="border-t border-primary/10 mt-1 pt-2 px-2">
               <a
-                href="https://drive.google.com/file/d/1OPi3Z3s3j7o5rdLnXCMCRU_SNuIOwTeG/view?usp=drive_link"
+                href="https://drive.google.com/file/d/1x7-KRZ1piuCzdhyRa-n-Dfc5u08VdHLQ/view?usp=sharing"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 px-4 py-2.5 text-sm font-mono text-primary hover:bg-primary/10 rounded-xl transition-colors"
