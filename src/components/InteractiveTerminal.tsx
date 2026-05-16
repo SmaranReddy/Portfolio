@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Terminal, Github, Linkedin, Mail, Send, ExternalLink } from 'lucide-react';
+import { Terminal, Github, Linkedin, Mail, Send, ExternalLink, Globe } from 'lucide-react';
 
 // ── Streaming text ────────────────────────────────────────────────────────────
 function StreamingText({ text, onDone }: { text: string; onDone?: () => void }) {
@@ -72,13 +72,13 @@ function buildCommands(
       ),
     }),
     about: () => ({
-      text: 'AI Backend Engineer @ IIIT Raichur. Pre-final year B.Tech CS with a Minor in ML from IIIT Hyderabad. Building RAG systems that actually work in production.',
+      text: 'Computer Science undergrad @ IIIT Raichur. Building backend systems, AI-powered applications, and cloud infrastructure for production deployment.',
     }),
     projects: () => ({
-      text: '↑ Scroll up to Projects section. RAG Engine (PRJ-001) is the flagship — adaptive retrieval with sub-second latency.',
+      text: '↑ Scroll up to Projects section. RecomX (PRJ-001) is the flagship — AI-powered recommendation engine with sub-100ms latency.',
     }),
     skills: () => ({
-      text: 'Top stack: RAG systems · FastAPI · LangChain · PyTorch · FAISS · Docker. Currently deep-diving into LLM serving architecture.',
+      text: 'Top stack: Python · FastAPI · LangChain · PyTorch · AWS · Docker. Currently deep-diving into multi-agent systems and GNNs.',
     }),
     contact: () => ({
       text: 'smaranreddy007@gmail.com  ·  linkedin.com/in/SmaranReddy321  ·  github.com/SmaranReddy',
@@ -100,11 +100,11 @@ function buildCommands(
             System Status
           </div>
           {[
-            { k: 'Available for',   v: 'AI Eng Internships (2026)' },
-            { k: 'Response time',   v: '< 24h'                     },
-            { k: 'Collaboration',   v: 'OPEN'                      },
-            { k: 'Caffeine level',  v: '87%'                       },
-            { k: 'Motivation',      v: '100%'                      },
+            { k: 'Available for',   v: 'Backend/AI Internships (2026)' },
+            { k: 'Response time',   v: '< 24h'                         },
+            { k: 'Collaboration',   v: 'OPEN'                          },
+            { k: 'Caffeine level',  v: '87%'                           },
+            { k: 'Motivation',      v: '100%'                          },
           ].map(({ k, v }) => (
             <div key={k} className="flex gap-3 text-xs font-mono">
               <span className="text-muted-foreground w-36 shrink-0">{k}</span>
@@ -209,7 +209,7 @@ export function InteractiveTerminal() {
           <div className="section-label">Terminal Access</div>
           <h2 className="text-3xl md:text-4xl font-bold text-primary">Get in Touch</h2>
           <p className="text-muted-foreground font-mono text-sm">
-            Direct channels open. Interactive CLI also available below.
+            Email, GitHub, LinkedIn — reach out anytime.
           </p>
         </motion.div>
 
@@ -228,9 +228,10 @@ export function InteractiveTerminal() {
             </div>
 
             {[
-              { icon: <Mail size={15} />,     label: 'Email',    display: 'smaranreddy007@gmail.com',     href: 'mailto:smaranreddy007@gmail.com'          },
-              { icon: <Linkedin size={15} />, label: 'LinkedIn', display: 'linkedin.com/in/SmaranReddy321', href: 'https://linkedin.com/in/SmaranReddy321' },
-              { icon: <Github size={15} />,   label: 'GitHub',   display: 'github.com/SmaranReddy',        href: 'https://github.com/SmaranReddy'           },
+              { icon: <Mail size={15} />,     label: 'Email',    display: 'smaranreddy007@gmail.com',          href: 'mailto:smaranreddy007@gmail.com'              },
+              { icon: <Globe size={15} />,    label: 'Portfolio',display: 'smaranreddy.vercel.app',             href: 'https://smaranreddy.vercel.app'               },
+              { icon: <Linkedin size={15} />, label: 'LinkedIn', display: 'linkedin.com/in/SmaranReddy321',     href: 'https://linkedin.com/in/SmaranReddy321'       },
+              { icon: <Github size={15} />,   label: 'GitHub',   display: 'github.com/SmaranReddy',            href: 'https://github.com/SmaranReddy'               },
             ].map((item, i) => (
               <motion.div
                 key={item.label}
@@ -260,8 +261,8 @@ export function InteractiveTerminal() {
                 Open to Opportunities
               </div>
               <p className="text-muted-foreground leading-relaxed italic">
-                "Whether it's RAG pipelines, sub-second latency, or why my vector DB has an
-                existential crisis — I'm always down to talk."
+              "Whether it's backend systems, AI-powered apps, or deploying at scale —
+              I'm always down to talk."
               </p>
             </motion.div>
           </motion.div>

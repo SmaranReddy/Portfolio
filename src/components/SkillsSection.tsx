@@ -10,43 +10,43 @@ const SKILL_GROUPS = [
     color: 'rgba(34,197,94,0.1)',
     border: 'rgba(34,197,94,0.25)',
     skills: [
-      'RAG Systems', 'LangChain', 'LangGraph', 'PyTorch',
-      'Transformers', 'Vector Databases', 'Multi-Agent Systems', 'FAISS',
+      'RAG Systems', 'NLP', 'LLM Fine-tuning', 'Transformers', 'GNNs',
+      'Multi-Agent Systems', 'LangChain', 'LangGraph', 'PyTorch',
+      'TensorFlow', 'Hugging Face', 'Scikit-learn', 'FAISS', 'Pinecone',
     ],
   },
   {
     id:    'backend',
-    label: 'Backend',
+    label: 'Backend & Languages',
     Icon:  Database,
     color: 'rgba(6,182,212,0.1)',
     border: 'rgba(6,182,212,0.25)',
     skills: [
-      'Python', 'FastAPI', 'Node.js', 'REST APIs',
-      'SQL', 'Next.js', 'Async Patterns', 'ONNX',
+      'Python', 'C++', 'SQL', 'JavaScript', 'TypeScript',
+      'FastAPI', 'Node.js', 'Express.js', 'REST APIs',
+      'PostgreSQL', 'MongoDB', 'Next.js',
     ],
   },
   {
     id:    'systems',
-    label: 'Systems & Infra',
+    label: 'Systems & Cloud',
     Icon:  Layers,
     color: 'rgba(234,179,8,0.1)',
     border: 'rgba(234,179,8,0.25)',
     skills: [
-      'Docker', 'AWS (EC2, S3)', 'GitHub Actions', 'Linux',
-      'C++', 'Prometheus', 'CI/CD', 'Git',
+      'Docker', 'AWS (EC2, S3)', 'GitHub Actions', 'Prometheus',
+      'OpenAI API', 'Claude API', 'Gemini API',
     ],
   },
 ];
 
 const STUDYING = [
-  'LLM serving architecture',
-  'Batching & quantization',
-  'Speculative decoding',
-  'Vector database internals',
-  'Retrieval eval (NDCG, MRR)',
-  'RAG failure taxonomies',
-  'Throughput vs latency trade-offs',
-  'FastAPI async patterns',
+  'Multi-Agent Systems',
+  'GNNs',
+  'LLM Fine-tuning',
+  'LangGraph',
+  'Pinecone',
+  'Transformers',
 ];
 
 function SkillGroupCard({ group, index }: { group: typeof SKILL_GROUPS[0]; index: number }) {
@@ -112,7 +112,7 @@ export function SkillsSection() {
             Technical Skills
           </h2>
           <p className="text-muted-foreground font-mono text-sm">
-            Active skill domains across AI engineering, backend, and infrastructure.
+            Programming, AI/ML, backend systems, and cloud infrastructure.
           </p>
         </motion.div>
 

@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { TerminalHero }       from './components/TerminalHero';
-import { AboutSection }       from './components/AboutSection';
-import { ProjectsSection }    from './components/ProjectsSection';
-import { SkillsSection }      from './components/SkillsSection';
-import { InteractiveTerminal } from './components/InteractiveTerminal';
-import { CustomCursor }       from './components/CustomCursor';
+import { TerminalHero }          from './components/TerminalHero';
+import { AboutSection }          from './components/AboutSection';
+import { ExperienceSection }     from './components/ExperienceSection';
+import { CertificationsSection } from './components/CertificationsSection';
+import { ProjectsSection }       from './components/ProjectsSection';
+import { SkillsSection }         from './components/SkillsSection';
+import { InteractiveTerminal }   from './components/InteractiveTerminal';
+import { CustomCursor }          from './components/CustomCursor';
 import { motion, useScroll, useSpring, AnimatePresence } from 'framer-motion';
 import { Terminal, ExternalLink, Menu, X } from 'lucide-react';
 
@@ -65,7 +67,7 @@ function App() {
 
   // Active section tracking
   useEffect(() => {
-    const sections = ['hero', 'about', 'projects', 'skills', 'contact'];
+    const sections = ['hero', 'about', 'experience', 'projects', 'skills', 'certifications', 'contact'];
     const observer = new IntersectionObserver(
       entries => {
         entries.forEach(e => { if (e.isIntersecting) setActiveSection(e.target.id || 'hero'); });
@@ -80,10 +82,11 @@ function App() {
   }, []);
 
   const navLinks = [
-    { label: 'About',    href: '#about'    },
-    { label: 'Projects', href: '#projects' },
-    { label: 'Skills',   href: '#skills'   },
-    { label: 'Contact',  href: '#contact'  },
+    { label: 'About',    href: '#about'         },
+    { label: 'Experience', href: '#experience'  },
+    { label: 'Projects', href: '#projects'      },
+    { label: 'Skills',   href: '#skills'        },
+    { label: 'Contact',  href: '#contact'       },
   ];
 
   return (
@@ -233,6 +236,11 @@ function App() {
           <AboutSection />
         </div>
 
+        <SectionDivider label="work.log" />
+        <div id="experience">
+          <ExperienceSection />
+        </div>
+
         <SectionDivider label="mission.log" />
         <div id="projects">
           <ProjectsSection />
@@ -241,6 +249,11 @@ function App() {
         <SectionDivider label="neural.map" />
         <div id="skills">
           <SkillsSection />
+        </div>
+
+        <SectionDivider label="credentials" />
+        <div id="certifications">
+          <CertificationsSection />
         </div>
 
         <SectionDivider label="terminal.access" />
@@ -268,9 +281,10 @@ function App() {
 
           <div className="flex gap-5">
             {[
-              { label: 'GitHub',   href: 'https://github.com/SmaranReddy' },
-              { label: 'LinkedIn', href: 'https://linkedin.com/in/SmaranReddy321' },
-              { label: 'Email',    href: 'mailto:smaranreddy007@gmail.com' },
+              { label: 'Portfolio', href: 'https://smaranreddy.vercel.app' },
+              { label: 'GitHub',    href: 'https://github.com/SmaranReddy' },
+              { label: 'LinkedIn',  href: 'https://linkedin.com/in/SmaranReddy321' },
+              { label: 'Email',     href: 'mailto:smaranreddy007@gmail.com' },
             ].map(l => (
               <motion.a
                 key={l.label}

@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef, memo } from 'react';
 import { motion } from 'framer-motion';
-import { Github, Linkedin, Mail, Cpu } from 'lucide-react';
+import { Github, Linkedin, Mail, Cpu, Globe } from 'lucide-react';
 
 const STATEMENT =
   "$ Building and deploying systems that don't embarrass themselves in production.";
@@ -9,6 +9,7 @@ const SOCIALS = [
   { href: 'https://github.com/SmaranReddy',         Icon: Github,   label: 'GitHub'   },
   { href: 'https://linkedin.com/in/SmaranReddy321', Icon: Linkedin, label: 'LinkedIn' },
   { href: 'mailto:smaranreddy007@gmail.com',        Icon: Mail,     label: 'Email'    },
+  { href: 'https://smaranreddy.vercel.app',         Icon: Globe,    label: 'Portfolio' },
 ];
 
 const DIAGNOSTICS = [

@@ -3,9 +3,9 @@ import { motion } from 'framer-motion';
 import { GraduationCap, MapPin, Cpu, Rocket, Calendar } from 'lucide-react';
 
 const STATS = [
-  { label: 'AI Systems Shipped',      value: '3+',   icon: Rocket,   note: "production-grade RAG pipelines."      },
-  { label: 'Internship Availability', value: '2026', icon: Calendar, note: "open for AI Engineering roles."        },
-  { label: 'Primary Focus',           value: 'RAG',  icon: Cpu,      note: "retrieval-augmented generation."       },
+  { label: 'AI Systems Shipped',      value: '3+',   icon: Rocket,   note: "AI-powered apps in production."        },
+  { label: 'Internship Availability', value: '2026', icon: Calendar, note: "open for Backend/AI Engineering roles." },
+  { label: 'Primary Focus',           value: 'AI/ML', icon: Cpu,     note: "backend systems & applied ML at scale." },
 ];
 
 export function AboutSection() {
@@ -42,23 +42,20 @@ export function AboutSection() {
                 transition={{ duration: 1.5, repeat: Infinity }}
                 className="w-1.5 h-1.5 rounded-full bg-primary"
               />
-              Operator: AI Backend Engineer
+              Operator: Backend Systems & AI Engineer
             </div>
 
             <div className="space-y-4 text-muted-foreground leading-relaxed">
               <p className="text-lg">
-                Pre-final year B.Tech CS at{' '}
+                Computer Science undergraduate at{' '}
                 <span className="text-primary font-mono">IIIT Raichur</span> with a minor in
                 Machine Learning from{' '}
                 <span className="text-primary font-mono">IIIT Hyderabad</span>.
               </p>
               <p>
-                Focused on building RAG systems that have the confidence to say{' '}
-                <span className="italic text-accent font-mono">
-                  "let me look that up properly"
-                </span>{' '}
-                instead of hallucinating. I care about systems that actually work in production —
-                not just in the demo.
+                Focused on building backend systems and AI-powered applications designed for
+                production deployment. Experienced in system design, cloud infrastructure,
+                and applied ML — building things that work at scale, not just in the demo.
               </p>
             </div>
 
@@ -68,12 +65,12 @@ export function AboutSection() {
                 {
                   degree: 'B.Tech Computer Science',
                   institution: 'IIIT Raichur',
-                  period: '2023 – 2027',
+                  period: 'CGPA: 8.2',
                 },
                 {
                   degree: 'Minor · Modern Machine Learning',
                   institution: 'IIIT Hyderabad',
-                  period: '2025 – 2026',
+                  period: 'CGPA: 8.6',
                 },
               ].map(({ degree, institution, period }) => (
                 <div key={institution} className="flex items-start gap-3 p-3.5 rounded-lg border border-primary/10 bg-[#080808]">
@@ -162,9 +159,9 @@ export function AboutSection() {
                 System Status
               </div>
               {[
-                { k: 'Available for',  v: 'AI Eng Internships' },
-                { k: 'Collaboration',  v: 'OPEN'               },
-                { k: 'Start date',     v: 'Summer 2026'        },
+                { k: 'Available for',  v: 'Backend/AI Internships' },
+                { k: 'Collaboration',  v: 'OPEN'                   },
+                { k: 'Start date',     v: 'Summer 2026'            },
               ].map(({ k, v }) => (
                 <div key={k} className="flex justify-between">
                   <span className="text-muted-foreground">{k}</span>
