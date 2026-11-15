@@ -161,7 +161,6 @@ export function AboutSection() {
               {[
                 { k: 'Available for',  v: 'Backend/AI Internships' },
                 { k: 'Collaboration',  v: 'OPEN'                   },
-                { k: 'Start date',     v: 'Summer 2026'            },
               ].map(({ k, v }) => (
                 <div key={k} className="flex justify-between">
                   <span className="text-muted-foreground">{k}</span>
