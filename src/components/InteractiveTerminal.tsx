@@ -75,7 +75,7 @@ function buildCommands(
       text: 'Computer Science undergrad @ IIIT Raichur. Building backend systems, AI-powered applications, and cloud infrastructure for production deployment.',
     }),
     projects: () => ({
-      text: '↑ Scroll up to Projects section. RecomX (PRJ-001) is the flagship — AI-powered recommendation engine with sub-100ms latency.',
+      text: '↑ Scroll up to Projects section. Latest: Orchestrix — distributed task orchestration with FastAPI, Redis & Python workers (30.9 → 130.7 tasks/sec across 1–4 workers in benchmarks).',
     }),
     skills: () => ({
       text: 'Top stack: Python · FastAPI · LangChain · PyTorch · AWS · Docker. Currently deep-diving into multi-agent systems and GNNs.',

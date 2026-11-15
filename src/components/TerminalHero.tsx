@@ -62,14 +62,14 @@ const DiagnosticPanel = memo(function DiagnosticPanel() {
   }, []);
 
   return (
-    <div className="border border-primary/20 rounded-xl bg-black/40 p-8 flex flex-col gap-6 h-full">
+    <div className="border border-primary/20 rounded-xl bg-black/40 p-6 sm:p-8 flex flex-col gap-6 h-full">
       <p className="font-mono text-[11px] tracking-[0.25em] text-primary/50 uppercase">
         System Diagnostic
       </p>
 
       <div className="flex flex-col gap-4 flex-1">
         {DIAGNOSTICS.map(({ label, value, color }) => (
-          <div key={label} className="flex items-center justify-between gap-6">
+          <div key={label} className="flex items-center justify-between gap-4">
             <span className="font-mono text-sm text-muted-foreground whitespace-nowrap">{label}:</span>
             <span className={`font-mono text-sm font-semibold ${color}`}>{value}</span>
           </div>
@@ -102,7 +102,7 @@ export function TerminalHero() {
   }, []);
 
   return (
-    <section className="min-h-screen flex items-center justify-center px-8 py-16 relative overflow-hidden bg-background">
+    <section className="min-h-screen flex items-center justify-center px-4 sm:px-8 py-16 relative overflow-hidden bg-background">
 
       {/* Subtle background glow */}
       <div className="absolute inset-0 pointer-events-none">
@@ -127,13 +127,13 @@ export function TerminalHero() {
             <div className="w-3.5 h-3.5 rounded-full bg-[#febc2e]" />
             <div className="w-3.5 h-3.5 rounded-full bg-[#28c840]" />
           </div>
-          <span className="flex-1 text-center font-mono text-xs tracking-[0.28em] text-muted-foreground uppercase">
+          <span className="flex-1 text-center font-mono text-base tracking-[0.28em] text-muted-foreground uppercase">
             whoami
           </span>
         </div>
 
         {/* Body: two columns */}
-        <div className="flex flex-col md:flex-row gap-12 p-12 md:p-16">
+        <div className="flex flex-col lg:flex-row gap-12 p-6 sm:p-12 md:p-16">
 
           {/* Left column */}
           <div className="flex-1 flex flex-col gap-7">
@@ -150,11 +150,11 @@ export function TerminalHero() {
             </h1>
 
             {/* Role line */}
-            <div className="flex items-center gap-2 text-muted-foreground font-mono text-base">
+            <div className="flex flex-wrap items-center gap-x-2 gap-y-1 text-muted-foreground font-mono text-base">
               <Cpu size={14} className="text-muted-foreground/60" />
-              <span>AI Backend Engineer</span>
+              <span className="whitespace-nowrap">AI Backend Engineer</span>
               <span className="text-primary/40">|</span>
-              <span className="text-primary/50">B.Tech CS @ IIIT Raichur</span>
+              <span className="text-primary/50 whitespace-nowrap">B.Tech CS @ IIIT Raichur</span>
             </div>
 
             {/* Typewriter statement */}
@@ -194,7 +194,7 @@ export function TerminalHero() {
             initial={{ opacity: 0, x: 16 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.2, duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
-            className="md:w-96 shrink-0"
+            className="lg:w-96 shrink-0"
           >
             <DiagnosticPanel />
           </motion.div>

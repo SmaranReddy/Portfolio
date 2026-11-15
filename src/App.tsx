@@ -104,10 +104,10 @@ function App() {
         initial={{ y: -40, opacity: 0 }}
         animate={{ y: 0,   opacity: 1 }}
         transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
-        className="fixed top-5 left-1/2 -translate-x-1/2 z-50 w-auto"
+        className="fixed top-5 inset-x-0 z-50 flex justify-center px-4 pointer-events-none"
       >
         {/* Desktop pill */}
-        <div className={`hidden md:flex items-center gap-1 px-4 py-2.5 rounded-full transition-all duration-500 ${
+        <div className={`pointer-events-auto hidden md:flex items-center gap-1 px-4 py-2.5 rounded-full transition-all duration-500 ${
           isScrolled
             ? 'glass border-glow shadow-[0_8px_32px_rgba(34,197,94,0.08)]'
             : 'bg-background/60 backdrop-blur-md border border-primary/15'
@@ -128,7 +128,7 @@ function App() {
             <a
               key={link.label}
               href={link.href}
-              className={`relative px-3 py-1.5 text-xs font-mono rounded-full transition-all duration-200 group ${
+              className={`relative px-3 py-1.5 text-sm font-mono rounded-full transition-all duration-200 group ${
                 activeSection === link.href.slice(1)
                   ? 'text-primary bg-primary/10'
                   : 'text-muted-foreground hover:text-primary hover:bg-primary/8'
@@ -152,14 +152,14 @@ function App() {
             href="https://drive.google.com/file/d/1x7-KRZ1piuCzdhyRa-n-Dfc5u08VdHLQ/view?usp=sharing"
             target="_blank"
             rel="noopener noreferrer"
-            className="ml-2 flex items-center gap-1.5 px-3 py-1.5 text-xs font-mono rounded-full border border-primary/40 text-primary hover:bg-primary/10 hover:border-primary/70 transition-all"
+            className="ml-2 flex items-center gap-1.5 px-3 py-1.5 text-sm font-mono rounded-full border border-primary/40 text-primary hover:bg-primary/10 hover:border-primary/70 transition-all"
           >
             Resume <ExternalLink size={10} />
           </motion.a>
         </div>
 
         {/* Mobile toggle */}
-        <div className="flex md:hidden items-center gap-3 px-4 py-2.5 rounded-full glass border-glow">
+        <div className="pointer-events-auto flex md:hidden items-center gap-3 px-4 py-2.5 rounded-full glass border-glow">
           <a href="#hero" className="flex items-center gap-2 text-primary font-bold text-sm">
             <Terminal size={16} />
             <span>smaran.dev</span>

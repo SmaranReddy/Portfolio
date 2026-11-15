@@ -128,7 +128,7 @@ export function AboutSection() {
               >
                 {/* Value badge */}
                 <div className="shrink-0 w-14 h-14 rounded-xl border border-primary/20 bg-primary/5 flex items-center justify-center">
-                  <span className="text-xl font-bold text-primary">{s.value}</span>
+                  <span className="text-base font-bold text-primary">{s.value}</span>
                 </div>
 
                 <div className="min-w-0">
